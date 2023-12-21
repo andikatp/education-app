@@ -4,7 +4,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:teacher/core/enums/update_user.dart';
 import 'package:teacher/core/errors/failures.dart';
 import 'package:teacher/features/auth/domain/repository/auth_repository.dart';
-import 'package:teacher/features/auth/domain/usecases/sign_up.dart';
 import 'package:teacher/features/auth/domain/usecases/update_user.dart';
 
 import 'auth_repository.mock.dart';
