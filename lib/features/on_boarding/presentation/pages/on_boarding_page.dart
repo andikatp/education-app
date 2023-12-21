@@ -80,6 +80,24 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     ),
                   ),
                 ),
+                Align(
+                  alignment: const Alignment(0, .85),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // TODO(Get-Started): Implement this functionality
+                      context.read<OnBoardingCubit>().cacheFirstTimer();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 50,
+                        vertical: 17,
+                      ),
+                      backgroundColor: Colours.primaryColour,
+                      foregroundColor: Colors.white,
+                    ),
+                    child: const Text('Get Started'),
+                  ),
+                ),
               ],
             ),
           );
