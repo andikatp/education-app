@@ -57,7 +57,7 @@ void main() {
       act: (_) => cubit.cacheFirstTimer(),
       expect: () => [
         const CachingFirstTimer(),
-        const OnBoardingError(message: 'statusCode Error: message'),
+        const OnBoardingError(message: '500 Error: message'),
       ],
     );
   });
