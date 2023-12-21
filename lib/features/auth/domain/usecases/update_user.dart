@@ -2,12 +2,18 @@ import 'package:equatable/equatable.dart';
 import 'package:teacher/core/enums/update_user.dart';
 import 'package:teacher/core/usecase/usecase.dart';
 import 'package:teacher/core/utils/typedef.dart';
+import 'package:teacher/features/auth/domain/repository/auth_repository.dart';
 
 class UpdateUser implements UseCaseWithParams<void, UpdateUserParams> {
+  UpdateUser({required AuthRepository repository}) : _repository = repository;
+  final AuthRepository _repository;
+
   @override
-  ResultFuture<void> call(UpdateUserParams params) {
-    // TODO: implement call
-    throw UnimplementedError();
+  ResultFuture<void> call(UpdateUserParams params) async {
+    return _repository.updateUser(
+      action: params.action,
+      userData: params.userData,
+    );
   }
 }
 
