@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:teacher/core/enums/update_user.dart';
 import 'package:teacher/features/auth/domain/entities/user_entity.dart';
@@ -20,8 +23,17 @@ abstract class AuthRemoteDataSource {
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
-  AuthRemoteDataSourceImpl({required http.Client client}) : _client = client;
-  final http.Client _client;
+  AuthRemoteDataSourceImpl({
+    required FirebaseAuth authClient,
+    required FirebaseFirestore cloudStoreClient,
+    required FirebaseStorage dbClient,
+  })  : _authClient = authClient,
+        _cloudStoreClient = cloudStoreClient,
+        _dbClient = dbClient;
+  final FirebaseAuth _authClient;
+  final FirebaseFirestore _cloudStoreClient;
+  final FirebaseStorage _dbClient;
+
   @override
   Future<void> forgotPassword({required String email}) {
     // TODO: implement forgotPassword
@@ -45,8 +57,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<void> updateUser(
-      {required UpdateUserAction action, required dynamic userData,}) {
+  Future<void> updateUser({
+    required UpdateUserAction action,
+    required dynamic userData,
+  }) {
     // TODO: implement updateUser
     throw UnimplementedError();
   }
