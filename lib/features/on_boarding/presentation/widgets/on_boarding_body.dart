@@ -39,22 +39,8 @@ class OnBoardingBody extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 14),
               ),
-              SizedBox(height: context.height * .05),
-              ElevatedButton(
-                onPressed: () {
-                  // TODO(Get-Started): Implement this functionality
-                  context.read<OnBoardingCubit>().cacheFirstTimer();
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 17,
-                  ),
-                  backgroundColor: Colours.primaryColour,
-                  foregroundColor: Colors.white,
-                ),
-                child: const Text('Get Started'),
-              ),
+              SizedBox(height: context.height * .15),
+           
             ],
           ),
         ),
