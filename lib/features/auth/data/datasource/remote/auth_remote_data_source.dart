@@ -75,14 +75,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           statusCode: 'Unknow Error',
         );
       }
-      final userData = await _getUserData(user.uid);
+      var userData = await _getUserData(user.uid);
 
       if (!userData.exists) {
         await _setUserData(user, email);
-        await _getUserData(user.uid);
+        userData = await _getUserData(user.uid);
         return LocalUserModel.fromMap(userData.data()!);
       }
-
       return LocalUserModel.fromMap(userData.data()!);
     } on ServerException {
       rethrow;
@@ -182,7 +181,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   Future<void> _setUserData(User user, String fallbackEmail) async {
-    await _cloudStoreClient.collection('users').add(
+    await _cloudStoreClient.collection('users').doc(user.uid).set(
           LocalUserModel(
             uid: user.uid,
             email: user.email ?? fallbackEmail,
