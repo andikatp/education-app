@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:teacher/core/extensions/context_extension.dart';
-import 'package:teacher/core/res/colours.dart';
 import 'package:teacher/core/res/fonts.dart';
 import 'package:teacher/features/on_boarding/domain/page_content.dart';
-import 'package:teacher/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';
 
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody({required this.pageContent, super.key});

@@ -32,8 +32,7 @@ class LocalUserModel extends LocalUser {
     );
   }
 
-  const LocalUserModel.empty()
-      : this(email: '', fullName: '', points: 0, uid: '');
+  const LocalUserModel.empty() : super.empty();
 
   LocalUserModel copyWith({
     String? uid,
