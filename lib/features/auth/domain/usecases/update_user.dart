@@ -5,16 +5,15 @@ import 'package:teacher/core/utils/typedef.dart';
 import 'package:teacher/features/auth/domain/repository/auth_repository.dart';
 
 class UpdateUser implements UseCaseWithParams<void, UpdateUserParams> {
-  UpdateUser({required AuthRepository repository}) : _repository = repository;
+  const UpdateUser({required AuthRepository repository})
+      : _repository = repository;
   final AuthRepository _repository;
 
   @override
-  ResultFuture<void> call(UpdateUserParams params) async {
-    return _repository.updateUser(
-      action: params.action,
-      userData: params.userData,
-    );
-  }
+  ResultFuture<void> call(UpdateUserParams params) => _repository.updateUser(
+        action: params.action,
+        userData: params.userData,
+      );
 }
 
 class UpdateUserParams extends Equatable {

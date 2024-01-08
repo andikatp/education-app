@@ -8,7 +8,7 @@ import 'package:teacher/features/auth/domain/entities/user_entity.dart';
 import 'package:teacher/features/auth/domain/repository/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  AuthRepositoryImpl({required AuthRemoteDataSourceImpl remote})
+  const AuthRepositoryImpl({required AuthRemoteDataSourceImpl remote})
       : _remoteDataSource = remote;
   final AuthRemoteDataSourceImpl _remoteDataSource;
 
