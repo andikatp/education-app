@@ -21,7 +21,7 @@ void main() {
     registerFallbackValue(UpdateUserAction.displayName);
   });
 
-  const tException = ServerException(message: 'message', statusCode: 400);
+  const tException = ServerException(message: 'message', statusCode: '400');
   const tUser = LocalUserModel.empty();
   const tUserPassword = 'test';
 
