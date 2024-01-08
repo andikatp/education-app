@@ -18,14 +18,8 @@ class LocalUser extends Equatable {
       : this(
           uid: '',
           email: '',
-          profilePic: '',
-          bio: '',
-          enrolledCourseIds: const [],
-          followers: const [],
-          following: const [],
-          fullName: '',
-          groupIds: const [],
           points: 0,
+          fullName: '',
         );
 
   final String uid;

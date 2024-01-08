@@ -16,21 +16,20 @@ class LocalUserModel extends LocalUser {
     super.profilePic,
   });
 
-  factory LocalUserModel.fromMap(DataMap map) {
-    return LocalUserModel(
-      uid: map['uid'] as String,
-      email: map['email'] as String,
-      profilePic: map['profilePic'] as String?,
-      bio: map['bio'] as String?,
-      points: (map['points'] as num).toInt(),
-      fullName: map['fullName'] as String,
-      groupIds: List<String>.from(map['groupIds'] as List<dynamic>),
-      enrolledCourseIds:
-          List<String>.from(map['enrolledCourseIds'] as List<dynamic>),
-      following: List<String>.from(map['following'] as List<dynamic>),
-      followers: List<String>.from(map['followers'] as List<dynamic>),
-    );
-  }
+  LocalUserModel.fromMap(DataMap map)
+      : super(
+          uid: map['uid'] as String,
+          email: map['email'] as String,
+          profilePic: map['profilePic'] as String?,
+          bio: map['bio'] as String?,
+          points: (map['points'] as num).toInt(),
+          fullName: map['fullName'] as String,
+          groupIds: List<String>.from(map['groupIds'] as List<dynamic>),
+          enrolledCourseIds:
+              (map['enrolledCourseIds'] as List<dynamic>).cast<String>(),
+          following: List<String>.from(map['following'] as List<dynamic>),
+          followers: List<String>.from(map['followers'] as List<dynamic>),
+        );
 
   const LocalUserModel.empty() : super.empty();
 
