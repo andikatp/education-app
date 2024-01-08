@@ -5,17 +5,15 @@ import 'package:teacher/features/auth/domain/entities/user_entity.dart';
 import 'package:teacher/features/auth/domain/repository/auth_repository.dart';
 
 class SignIn implements UseCaseWithParams<LocalUser, SignInParams> {
-  SignIn({required AuthRepository repository}) : _repository = repository;
+  const SignIn({required AuthRepository repository}) : _repository = repository;
 
   final AuthRepository _repository;
 
   @override
-  ResultFuture<LocalUser> call(SignInParams params) async {
-    return _repository.signIn(
-      email: params.email,
-      password: params.password,
-    );
-  }
+  ResultFuture<LocalUser> call(SignInParams params) => _repository.signIn(
+        email: params.email,
+        password: params.password,
+      );
 }
 
 class SignInParams extends Equatable {

@@ -40,9 +40,14 @@ class LocalUser extends Equatable {
   final List<String> followers;
 
   @override
+  String toString() {
+    return 'LocalUser{uid: $uid, email: $email, bio: $bio, '
+        'points: $points, fullName: $fullName}';
+  }
+
+  @override
   List<String> get props => [uid, email];
 
   @override
   bool get stringify => true;
-
 }
