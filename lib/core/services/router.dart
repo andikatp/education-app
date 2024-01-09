@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:teacher/core/common/app/providers/user_provider.dart';
 import 'package:teacher/core/common/views/under_construction_page.dart';
 import 'package:teacher/core/extensions/context_extension.dart';
 import 'package:teacher/core/services/injection_container.dart';
