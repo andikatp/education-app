@@ -1,1 +1,1 @@
-const kDefaulAvatar = 'https://via.placeholder.com/200';
+const kDefaultAvatar = 'https://via.placeholder.com/200';
