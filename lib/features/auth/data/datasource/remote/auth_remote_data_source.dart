@@ -108,7 +108,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         password: password,
       );
       await userCredential.user?.updateDisplayName(fullName);
-      await userCredential.user?.updatePhotoURL(kDefaulAvatar);
+      await userCredential.user?.updatePhotoURL(kDefaultAvatar);
       await _setUserData(userCredential.user!, email);
     } on FirebaseAuthException catch (e) {
       throw ServerException(
@@ -133,7 +133,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           await _updateUserData({'email': userData});
         case UpdateUserAction.displayName:
           await _authClient.currentUser?.updateDisplayName(userData as String);
-          await _updateUserData({'displayName': userData});
+          await _updateUserData({'fullName': userData});
         case UpdateUserAction.profilePic:
           final ref = _dbClient
               .ref()
@@ -141,7 +141,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           await ref.putFile(userData as File);
           final url = await ref.getDownloadURL();
           await _authClient.currentUser?.updatePhotoURL(url);
-          await _updateUserData({'profilePic': userData});
+          await _updateUserData({'profilePic': url});
         case UpdateUserAction.password:
           if (_authClient.currentUser?.email != null) {
             final newData = jsonDecode(userData as String) as DataMap;
@@ -151,7 +151,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
                 password: newData['oldPassword'] as String,
               ),
             );
-            await _authClient.currentUser
+            return await _authClient.currentUser
                 ?.updatePassword(newData['newPassword'] as String);
           }
 
