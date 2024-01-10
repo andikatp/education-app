@@ -8,9 +8,9 @@ import 'package:teacher/features/auth/domain/entities/user_entity.dart';
 import 'package:teacher/features/auth/domain/repository/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
-  const AuthRepositoryImpl({required AuthRemoteDataSourceImpl remote})
+  const AuthRepositoryImpl({required AuthRemoteDataSource remote})
       : _remoteDataSource = remote;
-  final AuthRemoteDataSourceImpl _remoteDataSource;
+  final AuthRemoteDataSource _remoteDataSource;
 
   @override
   ResultFuture<void> forgotPassword({required String email}) async {
@@ -61,7 +61,9 @@ class AuthRepositoryImpl implements AuthRepository {
   }) async {
     try {
       final result = await _remoteDataSource.updateUser(
-          action: action, userData: userData,);
+        action: action,
+        userData: userData,
+      );
       return Right(result);
     } on ServerException catch (e) {
       return Left(ServerFailure.fromException(e));

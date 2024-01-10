@@ -12,7 +12,7 @@ import 'package:teacher/core/utils/typedef.dart';
 import 'package:teacher/features/auth/data/models/local_user_model.dart';
 import 'package:teacher/features/auth/domain/entities/user_entity.dart';
 
-abstract class AuthRemoteDataSource {
+sealed class AuthRemoteDataSource {
   Future<void> forgotPassword({required String email});
   Future<LocalUser> signIn({
     required String email,
