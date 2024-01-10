@@ -47,11 +47,9 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       );
     case '/forgot-password':
       return _pageBuilder(
-          (_) => BlocProvider(
-                create: (_) => sl<AuthBloc>(),
-                child: const ForgotPasswordScreen(),
-              ),
-          settings: routeSettings,);
+        (_) => const ForgotPasswordScreen(),
+        settings: routeSettings,
+      );
     case Dashboard.routeName:
       return _pageBuilder((_) => const Dashboard(), settings: routeSettings);
     default:
