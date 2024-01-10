@@ -12,7 +12,6 @@ import 'package:teacher/core/utils/core_utils.dart';
 import 'package:teacher/features/auth/data/models/local_user_model.dart';
 import 'package:teacher/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:teacher/features/auth/presentation/pages/sign_in_page.dart';
-import 'package:teacher/features/auth/presentation/widgets/sign_in_form.dart';
 import 'package:teacher/features/auth/presentation/widgets/sign_up_form.dart';
 import 'package:teacher/features/dashboard/presentations/pages/dashboard.dart';
 
