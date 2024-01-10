@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -112,9 +111,12 @@ class _SignInPageState extends State<SignInPage> {
                         FocusManager.instance.primaryFocus?.unfocus();
                         sl<FirebaseAuth>().currentUser?.reload();
                         if (_formKey.currentState!.validate()) {
-                          context.read<AuthBloc>().add(SignInEvent(
-                              email: _emailController.text.trim(),
-                              password: _passwordController.text.trim(),),);
+                          context.read<AuthBloc>().add(
+                                SignInEvent(
+                                  email: _emailController.text.trim(),
+                                  password: _passwordController.text.trim(),
+                                ),
+                              );
                         }
                       },
                     ),
