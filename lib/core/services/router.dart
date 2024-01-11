@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:teacher/core/common/views/under_construction_page.dart';
+import 'package:teacher/core/common/page/under_construction_page.dart';
 import 'package:teacher/core/extensions/context_extension.dart';
 import 'package:teacher/core/services/injection_container.dart';
 import 'package:teacher/features/auth/data/models/local_user_model.dart';

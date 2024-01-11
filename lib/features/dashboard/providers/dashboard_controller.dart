@@ -8,9 +8,19 @@ class DashboardController extends ChangeNotifier {
 
   final List<Widget> _screens = [
     ChangeNotifierProvider(
-      create: (context) => TabNavigator(
-        TabItem(child: const Placeholder()),
-      ),
+      create: (context) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentPage(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentPage(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => TabNavigator(TabItem(child: const Placeholder())),
+      child: const PersistentPage(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => TabNavigator(TabItem(child: const Placeholder())),
       child: const PersistentPage(),
     ),
   ];
@@ -29,7 +39,7 @@ class DashboardController extends ChangeNotifier {
   }
 
   void goBack() {
-    if(_historyIndex.length ==1 ) return;
+    if (_historyIndex.length == 1) return;
     _historyIndex.removeLast();
     _currentIndex = _historyIndex.last;
     notifyListeners();
