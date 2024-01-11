@@ -40,7 +40,18 @@ class LocalUser extends Equatable {
   }
 
   @override
-  List<String> get props => [uid, email];
+  List<Object?> get props => [
+        uid,
+        email,
+        profilePic,
+        bio,
+        points,
+        fullName,
+        groupIds.length,
+        enrolledCourseIds.length,
+        following.length,
+        followers.length,
+      ];
 
   @override
   bool get stringify => true;
