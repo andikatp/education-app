@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:teacher/core/common/app/providers/tab_navigator.dart';
 import 'package:teacher/core/common/page/presistent_page.dart';
+import 'package:teacher/features/profile/presentations/pages/profile_page.dart';
 
 class DashboardController extends ChangeNotifier {
   List<int> _historyIndex = [0];
@@ -20,7 +21,7 @@ class DashboardController extends ChangeNotifier {
       child: const PersistentPage(),
     ),
     ChangeNotifierProvider(
-      create: (context) => TabNavigator(TabItem(child: const Placeholder())),
+      create: (context) => TabNavigator(TabItem(child: const ProfilePage())),
       child: const PersistentPage(),
     ),
   ];

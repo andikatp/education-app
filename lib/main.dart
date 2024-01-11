@@ -7,7 +7,7 @@ import 'package:teacher/core/res/colours.dart';
 import 'package:teacher/core/res/fonts.dart';
 import 'package:teacher/core/services/injection_container.dart';
 import 'package:teacher/core/services/router.dart';
-import 'package:teacher/features/dashboard/providers/dashboard_controller.dart';
+import 'package:teacher/features/dashboard/presentations/providers/dashboard_controller.dart';
 import 'package:teacher/firebase_options.dart';
 
 Future<void> main() async {
