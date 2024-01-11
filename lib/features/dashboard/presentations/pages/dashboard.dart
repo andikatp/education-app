@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:teacher/core/common/app/providers/user_provider.dart';
 import 'package:teacher/core/res/colours.dart';
 import 'package:teacher/features/auth/data/models/local_user_model.dart';
-import 'package:teacher/features/dashboard/providers/dashboard_controller.dart';
-import 'package:teacher/features/dashboard/utils/dashboard_utils.dart';
+import 'package:teacher/features/dashboard/presentations/providers/dashboard_controller.dart';
+import 'package:teacher/features/dashboard/presentations/utils/dashboard_utils.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
