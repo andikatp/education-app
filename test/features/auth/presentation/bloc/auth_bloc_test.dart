@@ -193,7 +193,7 @@ void main() {
     );
   });
 
-   group('UpdateUser', () {
+  group('UpdateUser', () {
     const tEmail = '';
     final tServerFailure = ServerFailure(message: '', statusCode: '');
     blocTest<AuthBloc, AuthState>(
@@ -205,9 +205,9 @@ void main() {
         return authBloc;
       },
       act: (bloc) => bloc.add(
-         UpdateUserEvent(
-         action: tUpdateUserParams.action,
-         userData: tUpdateUserParams.userData,
+        UpdateUserEvent(
+          action: tUpdateUserParams.action,
+          userData: tUpdateUserParams.userData,
         ),
       ),
       expect: () => [const AuthLoading(), const UserUpdated()],
